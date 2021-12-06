@@ -52,7 +52,6 @@ class Bingo:
             all_boards = self.boards
             for board in all_boards:
                 is_bingo, misses = self._check_boards(i, board, find_last=True)
-                # Return last board to bingo
                 if len(self.boards) == 0:
                     self.boards = all_boards
                     return sum(misses) * int(self.nums_to_call[i-1])

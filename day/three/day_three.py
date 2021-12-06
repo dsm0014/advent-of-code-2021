@@ -27,6 +27,7 @@ def _decoder(maxormin, data, index, nums=None, last_maxormin=""):
         index += 1
         nums = _decoder(maxormin, data, index, nums, last_maxormin)
     elif type(nums) == list:
+        # With one element left we need to return the final remaining num match then can exit recursion
         return nums[0]
     return nums
 

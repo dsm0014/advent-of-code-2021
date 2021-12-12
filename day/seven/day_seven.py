@@ -18,7 +18,7 @@ def part_two(data):
     low_fuel = None
 
     def _low_fuel(index):
-        fuel = sum([sum([f + 1 for f in range(abs(d - index))]) for d in data if abs(d - index)])
+        fuel = sum([diff*(diff+1)/2 for d in data if (diff := abs(d - index))])
         if not low_fuel:
             return fuel
         return fuel if fuel < low_fuel else low_fuel
